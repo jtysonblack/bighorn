@@ -11,6 +11,9 @@
   --bg-panel-2: #21251A;
   --brass: #B9924F;
   --brass-bright: #D4AC6E;
+  --olive: #8C983E;      /* pulled from the client's real logo pixels (#505028 dominant) */
+  --olive-bright: #ADBC4E;
+  --olive-deep: #404521;
   --sand: #C7BFA6;
   --paper: #F3EFE4;
   --rust: #A8461F;
@@ -67,7 +70,7 @@ p:last-child { margin-bottom: 0; }
 
 /* Focus visibility */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
-  outline: 2px solid var(--brass-bright);
+  outline: 2px solid var(--olive-bright);
   outline-offset: 3px;
 }
 
@@ -79,7 +82,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   font-size: 0.78rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--brass);
+  color: var(--olive-bright);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -89,7 +92,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   content: '';
   width: 26px;
   height: 1px;
-  background: var(--brass);
+  background: var(--olive-bright);
   display: inline-block;
 }
 
@@ -117,7 +120,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   opacity: 0.10;
   background-image:
     repeating-radial-gradient(circle at 18% 28%, transparent 0px, transparent 17px, var(--sand) 18px, transparent 19px, transparent 36px),
-    repeating-radial-gradient(circle at 82% 66%, transparent 0px, transparent 23px, var(--brass) 24px, transparent 25px, transparent 48px),
+    repeating-radial-gradient(circle at 82% 66%, transparent 0px, transparent 23px, var(--olive) 24px, transparent 25px, transparent 48px),
     repeating-radial-gradient(circle at 50% 100%, transparent 0px, transparent 30px, var(--sand) 31px, transparent 32px, transparent 60px);
 }
 .topo::after {
@@ -139,7 +142,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   position: absolute;
   width: 22px;
   height: 22px;
-  border: 2px solid var(--brass);
+  border: 2px solid var(--olive-bright);
   opacity: 0.85;
 }
 .reticle .corner.tl { top: 0; left: 0; border-right: none; border-bottom: none; }
@@ -170,10 +173,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }
-.btn-primary { background: var(--brass); color: var(--bg-deep); }
-.btn-primary:hover { background: var(--brass-bright); transform: translateY(-1px); }
+.btn-primary { background: var(--olive); color: var(--bg-deep); }
+.btn-primary:hover { background: var(--olive-bright); transform: translateY(-1px); }
 .btn-outline { background: transparent; color: var(--paper); border-color: var(--sand); }
-.btn-outline:hover { border-color: var(--brass); color: var(--brass-bright); }
+.btn-outline:hover { border-color: var(--olive-bright); color: var(--olive-bright); }
 .btn-rust { background: var(--rust); color: var(--paper); }
 .btn-rust:hover { background: var(--rust-bright); }
 .btn::after { content: '\2192'; font-family: var(--font-body); }
@@ -195,7 +198,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding-bottom: 8px;
   color: var(--sand);
 }
-.topbar a { color: var(--brass); }
+.topbar a { color: var(--olive-bright); }
 
 .site-header {
   position: sticky;
@@ -245,7 +248,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   border-bottom: 2px solid transparent;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
-.main-nav a:hover, .main-nav a.active { color: var(--paper); border-color: var(--brass); }
+.main-nav a:hover, .main-nav a.active { color: var(--paper); border-color: var(--olive-bright); }
 
 .has-flyout { position: relative; }
 .flyout {
@@ -284,7 +287,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .hero-kicker {
   font-family: var(--font-mono);
-  color: var(--brass);
+  color: var(--olive-bright);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   font-size: 0.8rem;
@@ -301,7 +304,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .hero-actions { display: flex; gap: 16px; margin-top: 34px; flex-wrap: wrap; }
 .hero-badge-row { display: flex; gap: 40px; margin-top: 56px; flex-wrap: wrap; }
-.hero-badge { font-family: var(--font-mono); font-size: 0.78rem; color: var(--sand); border-left: 2px solid var(--brass); padding-left: 14px; }
+.hero-badge { font-family: var(--font-mono); font-size: 0.78rem; color: var(--sand); border-left: 2px solid var(--olive-bright); padding-left: 14px; }
 
 /* --------------------------------------------------------------------------
    Pillar / service cards
@@ -338,7 +341,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   text-transform: uppercase;
   color: var(--paper);
 }
-.pillar a.pillar-link::after { content: ' \2192'; color: var(--brass); }
+.pillar a.pillar-link::after { content: ' \2192'; color: var(--olive-bright); }
 
 /* --------------------------------------------------------------------------
    Generic sections / panels
@@ -372,7 +375,7 @@ section { padding: 90px 0; }
   top: 9px;
   width: 8px;
   height: 8px;
-  background: var(--brass);
+  background: var(--olive-bright);
   clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
 }
 
@@ -396,7 +399,7 @@ section { padding: 90px 0; }
   cursor: pointer;
   text-align: left;
 }
-.tab-btn.active { color: var(--brass-bright); border-top-color: var(--brass); }
+.tab-btn.active { color: var(--olive-bright); border-top-color: var(--olive-bright); }
 .tab-panels { padding: 26px 0 0; max-width: 640px; }
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
@@ -419,7 +422,7 @@ section { padding: 90px 0; }
 .stat .num {
   font-family: var(--font-display);
   font-size: 3rem;
-  color: var(--brass);
+  color: var(--olive-bright);
   font-weight: 700;
 }
 .stat .label { font-family: var(--font-mono); font-size: 0.78rem; color: var(--sand); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 8px; }
@@ -538,12 +541,12 @@ section { padding: 90px 0; }
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--brass);
+  color: var(--olive-bright);
   margin-bottom: 16px;
 }
 .footer-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
 .footer-grid a { color: var(--sand); font-size: 0.9rem; }
-.footer-grid a:hover { color: var(--brass-bright); }
+.footer-grid a:hover { color: var(--olive-bright); }
 .footer-bottom {
   margin-top: 50px;
   padding-top: 24px;

@@ -23,6 +23,31 @@ migration.
 
 ## Versions
 
+### v1.1 — Green accent from real logo (August 2026)
+**Status:** ✅ Applied
+
+Client flagged that their logo is green and their previous site used green —
+wanted it reflected here. Sampled the actual live logo file
+(`bighorngov.com/wp-content/uploads/2019/12/Bighorn-Site-Logo.png`) pixel-by-
+pixel via canvas in the browser rather than eyeballing a green from
+reference — dominant color came back `#505028` (olive-drab, ~60° hue).
+Built `--olive`/`--olive-bright` (`#8C983E`/`#ADBC4E`) as brighter UI-safe
+tints of that exact hue and promoted it to the primary interactive accent
+across all 8 pages (buttons, active nav, links, section labels, reticle
+brackets, stat numbers, hero kicker). Brass steps back to a secondary
+"data label" role (NAICS codes, step numbers, resource dates, fact/contact
+labels) instead of disappearing — still reads as intentional, not random.
+
+The logo itself is still hotlinked from the live site (same file, real
+green, no placeholder) — not yet pulled down to a local asset. Tried to
+extract the raw PNG bytes via the browser for local hosting but the
+in-page extraction path returned a security block on the encoded image
+data (expected/appropriate — that's a general safeguard, not specific to
+this site). Straightforward manual fallback: right-click → save logo from
+bighorngov.com, drop into `site/assets/img/`, or say the word and next
+session can request Downloads-folder access to grab it directly the
+system's way.
+
 ### v1 — Initial Mockup (August 2026)
 **Files:** `site/*.html`
 **Status:** ✅ Built, ready for client review

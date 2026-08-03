@@ -19,23 +19,33 @@ eagles" military branding.
 
 **Signature element:** a topographic contour-line texture used as a
 recurring background layer (hero sections, section dividers), paired with a
-four-corner targeting-reticle bracket frame on featured images/cards. Sharp
-clipped corners throughout instead of rounded ones — reads like armor plate,
-not a SaaS dashboard.
+four-corner targeting-reticle bracket frame on featured images/cards,
+rendered in the client's own logo green. Sharp clipped corners throughout
+instead of rounded ones — reads like armor plate, not a SaaS dashboard.
 
 ## Color Tokens
 | Token | Hex | Use |
 |-------|-----|-----|
 | `--bg-deep` | `#12140F` | Primary background — gunmetal-olive, near-black but warm, not pure black |
 | `--bg-panel` | `#1B1E16` | Card/section panel background, one step up from bg-deep |
-| `--brass` | `#B9924F` | Primary accent — cartridge brass. Headlines, active nav, key CTAs, reticle brackets |
+| `--olive` / `--olive-bright` | `#8C983E` / `#ADBC4E` | **Primary accent.** Sourced directly from the client's own logo, not chosen abstractly — sampled the actual logo PNG pixels (dominant color `#505028`, ~H60&deg; olive-drab) and built a brighter, UI-usable tint at the same hue. Buttons, active nav, links, section labels, reticle brackets, hero kicker, stat numbers. |
+| `--brass` / `--brass-bright` | `#B9924F` / `#D4AC6E` | Secondary/data accent — cartridge brass. NAICS codes, process step numbers, resource dates, fact labels, contact info labels. Keeps a metallic "dossier" texture without competing with the green for primary attention. |
 | `--sand` | `#C7BFA6` | Secondary text on dark, muted labels, borders |
 | `--paper` | `#F3EFE4` | Off-white — body text on dark, light-section backgrounds |
-| `--rust` | `#A8461F` | Secondary accent, sparingly — used for the Defense Solutions line and urgent CTAs only |
+| `--rust` | `#A8461F` | Tertiary accent, sparingly — Defense Solutions line CTA only |
 | `--line` | `#3A3D30` | Hairline borders, dividers, topo-line stroke color |
 
-Do not introduce additional hues. Rust is intentionally rare — one accent
-should not compete with brass for attention.
+**v1.1 update (2026-08-03):** Client noted their existing logo is green and
+their prior site used green — they want it reflected. Rather than guess a
+green, pulled the actual color from the live logo file via pixel sampling
+(canvas `getImageData` on `bighorngov.com/wp-content/uploads/2019/12/
+Bighorn-Site-Logo.png`): dominant RGB (80,80,40) / `#505028`, hue ~60&deg;,
+a dark olive-drab. Built `--olive`/`--olive-bright` as brighter, more
+saturated tints of that exact hue for UI use, and promoted it to the
+primary interactive accent (previously brass held that role). Brass steps
+back to a secondary "data label" accent. Rust stays tertiary and rare — one
+accent still shouldn't compete with the primary for attention, it's just
+olive-green now instead of brass.
 
 ## Type Tokens
 | Role | Face | Notes |

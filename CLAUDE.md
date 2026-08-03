@@ -32,8 +32,10 @@ lines as a background texture, paired with a targeting-reticle corner-bracket
 frame on featured cards/images. Sharp, clipped corners instead of rounded
 ones — reads like armor plate, not SaaS.
 
-**Palette:** deep gunmetal-olive background, brass/cartridge accent, warm
-sand neutral, paper off-white, muted ordnance-rust for secondary CTAs.
+**Palette:** deep gunmetal-olive background, olive-green primary accent
+(sourced directly from the client's real logo pixels — not guessed), brass/
+cartridge as a secondary data-label accent, warm sand neutral, paper
+off-white, muted ordnance-rust for the Defense Solutions CTA only.
 **Type:** Oswald (condensed display, stenciled authority) + Barlow (body) +
 Space Mono (data labels — NAICS codes, coordinates, section numbers).
 Full token system in `context/brand-strategy.md`.
