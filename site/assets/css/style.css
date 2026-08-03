@@ -204,27 +204,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* --------------------------------------------------------------------------
    Header / Nav
    -------------------------------------------------------------------------- */
-.topbar {
-  background: var(--bg-panel);
-  border-bottom: 1px solid var(--line);
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-}
-.topbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  color: var(--sand);
-}
-.topbar a { color: var(--olive-bright); }
-
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(18, 20, 15, 0.94);
+  background: rgba(18, 20, 15, 0.96);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--line);
 }
@@ -232,12 +216,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 14px;
-  padding-bottom: 14px;
+  padding-top: 26px;
+  padding-bottom: 26px;
   gap: 24px;
 }
 .brand { display: flex; align-items: center; gap: 12px; }
-.brand img { height: 42px; width: auto; }
+.brand img { height: 68px; width: auto; }
+
+.nav-cta-wrap { display: flex; align-items: center; gap: 44px; }
 
 .nav-toggle {
   display: none;
@@ -249,18 +235,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   cursor: pointer;
 }
 
-.main-nav ul {
+.main-nav > ul {
   list-style: none;
   display: flex;
   align-items: center;
   gap: 34px;
   margin: 0;
   padding: 0;
+  position: relative;
 }
-.main-nav > ul { position: relative; }
 .main-nav a {
   font-family: var(--font-display);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--sand);
@@ -273,10 +259,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .has-flyout { position: relative; }
 .flyout {
   display: none;
+  list-style: none;
+  margin: 14px 0 0;
   position: absolute;
   top: 100%;
   left: 0;
-  margin-top: 14px;
   background: var(--bg-panel);
   border: 1px solid var(--line);
   min-width: 260px;
@@ -607,7 +594,7 @@ section { padding: 90px 0; }
   .main-nav a { display: block; padding: 12px 0; }
   .has-flyout .flyout { display: none; position: static; border: none; background: transparent; margin: 0 0 0 14px; padding: 0; }
   .has-flyout.open .flyout { display: block; }
-  .header-phone { display: none; }
+  .header-cta { display: none; }
   .pillars, .stat-row, .resource-grid, .fact-grid { grid-template-columns: 1fr; }
   .step { grid-template-columns: 50px 1fr; }
   .hero { padding: 70px 0 60px; }
