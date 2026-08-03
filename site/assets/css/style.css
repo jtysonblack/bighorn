@@ -16,6 +16,9 @@
   --olive-deep: #404521;
   --sand: #C7BFA6;
   --paper: #F3EFE4;
+  --ink: #1E2016;         /* headings on light sections */
+  --ink-soft: #565A46;    /* body text on light sections */
+  --olive-on-light: #5E6827; /* same hue as --olive, darkened for 5.2:1 contrast on paper */
   --rust: #A8461F;
   --rust-bright: #C0552A;
   --line: #3A3D30;
@@ -130,6 +133,23 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   z-index: -1;
   background: linear-gradient(180deg, rgba(18,20,15,0.2) 0%, var(--bg-deep) 92%);
 }
+
+/* --------------------------------------------------------------------------
+   Light "paper" section — experiment: does green pop more here or on dark?
+   Clean, textureless, warm off-white. Contrast-checked, not eyeballed:
+   olive-on-light hits 5.2:1 on paper (dark --olive fails at 2-3:1 on light).
+   -------------------------------------------------------------------------- */
+.section-light {
+  background: var(--paper);
+  color: var(--ink);
+}
+.section-light h1, .section-light h2, .section-light h3, .section-light h4 { color: var(--ink); }
+.section-light p { color: var(--ink-soft); }
+.section-light .eyebrow,
+.section-light .sec-label { color: var(--olive-on-light); }
+.section-light .sec-label::before { background: var(--olive-on-light); }
+.section-light .btn-primary { background: var(--olive-on-light); color: var(--paper); }
+.section-light .btn-primary:hover { background: var(--ink); }
 
 /* --------------------------------------------------------------------------
    Targeting-reticle corner frame — the signature element
@@ -263,7 +283,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding: 10px 0;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
-.has-flyout:hover .flyout,
+.has-flyout.open .flyout,
 .has-flyout:focus-within .flyout { display: block; }
 .flyout li { width: 100%; }
 .flyout a {

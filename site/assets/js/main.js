@@ -11,14 +11,39 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Mobile flyout (Services submenu) toggle — tap to expand instead of hover
-  document.querySelectorAll('.has-flyout > a').forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      if (window.innerWidth <= 760) {
-        e.preventDefault();
-        link.parentElement.classList.toggle('open');
+  // Services flyout — click to open/close (no hover-open), any viewport
+  var flyoutItems = document.querySelectorAll('.has-flyout');
+  flyoutItems.forEach(function (item) {
+    var trigger = item.querySelector(':scope > a');
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      var isOpen = item.classList.contains('open');
+      flyoutItems.forEach(function (other) {
+        other.classList.remove('open');
+        other.querySelector(':scope > a').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
       }
     });
+  });
+  document.addEventListener('click', function (e) {
+    flyoutItems.forEach(function (item) {
+      if (!item.contains(e.target)) {
+        item.classList.remove('open');
+        item.querySelector(':scope > a').setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      flyoutItems.forEach(function (item) {
+        item.classList.remove('open');
+        item.querySelector(':scope > a').setAttribute('aria-expanded', 'false');
+      });
+    }
   });
 
   // Tab component (VR Powered Training page)
