@@ -221,7 +221,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   gap: 24px;
 }
 .brand { display: flex; align-items: center; gap: 12px; }
-.brand img { height: 68px; width: auto; }
+.brand img { height: 68px; width: auto; filter: brightness(0) invert(1); }
 
 .nav-cta-wrap { display: flex; align-items: center; gap: 44px; }
 
