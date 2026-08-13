@@ -224,9 +224,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .brand img { height: 68px; width: auto; filter: brightness(0) invert(1); }
 
 /* SDVOSB seal is a JPG with a baked-in white square background — multiply
-   blend drops the white against whatever section it sits on (dark or
-   light) without needing a real transparent source file. */
+   blend drops the white against whatever section it sits on. But multiply
+   only reads true against a light backdrop; over the site's near-black
+   background it crushes the seal's own colors toward black too. So on
+   dark sections, give it a small light "paper" chip to sit on (matches
+   the light section the homepage version already lives on) instead of
+   relying on the blend mode alone. */
 .badge-clean { mix-blend-mode: multiply; }
+.seal-panel {
+  background: var(--paper);
+  display: inline-block;
+  padding: 28px;
+}
+.seal-panel .corner { border-color: var(--olive-on-light); }
 
 .nav-cta-wrap { display: flex; align-items: center; gap: 44px; }
 
