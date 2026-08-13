@@ -86,17 +86,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--olive-bright);
-  display: flex;
-  align-items: center;
-  gap: 10px;
   margin-bottom: 14px;
-}
-.sec-label::before {
-  content: '';
-  width: 26px;
-  height: 1px;
-  background: var(--olive-bright);
-  display: inline-block;
 }
 
 .eyebrow {
@@ -147,7 +137,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .section-light p { color: var(--ink-soft); }
 .section-light .eyebrow,
 .section-light .sec-label { color: var(--olive-on-light); }
-.section-light .sec-label::before { background: var(--olive-on-light); }
 .section-light .btn-primary { background: var(--olive-on-light); color: var(--paper); }
 .section-light .btn-primary:hover { background: var(--ink); }
 
