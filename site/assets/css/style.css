@@ -231,13 +231,26 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .nav-toggle {
   display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
   background: transparent;
   border: 1px solid var(--line);
-  color: var(--paper);
-  padding: 8px 10px;
-  font-family: var(--font-mono);
+  padding: 12px 14px;
   cursor: pointer;
+  margin-left: auto;
 }
+.hamburger-line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--paper);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 .main-nav > ul {
   list-style: none;
@@ -581,7 +594,8 @@ section { padding: 90px 0; }
 }
 
 @media (max-width: 760px) {
-  .nav-toggle { display: inline-block; }
+  .nav-toggle { display: inline-flex; }
+  .nav-cta-wrap { display: contents; }
   .main-nav {
     display: none;
     position: absolute;
