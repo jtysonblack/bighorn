@@ -368,6 +368,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding: 32px 34px;
   background: rgba(18,20,15,0.5);
   backdrop-filter: blur(3px);
+  margin-right: auto;
+  transition: margin 0.3s ease;
+}
+.hero-slider-panel.is-align-right {
+  margin-right: 0;
+  margin-left: auto;
 }
 .hero-slider-panel .hero-kicker { margin-bottom: 12px; }
 .hero-slider-panel h2 {

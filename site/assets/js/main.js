@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var kickerEl = heroSlider.querySelector('[data-slide-kicker]');
     var headingEl = heroSlider.querySelector('[data-slide-heading]');
     var linkEl = heroSlider.querySelector('[data-slide-link]');
+    var panelEl = heroSlider.querySelector('.hero-slider-panel');
     var current = 0;
     var timer;
 
@@ -79,6 +80,8 @@ document.addEventListener('DOMContentLoaded', function () {
       kickerEl.textContent = tab.getAttribute('data-kicker');
       headingEl.textContent = tab.getAttribute('data-heading');
       linkEl.setAttribute('href', tab.getAttribute('data-href'));
+      // Slide 1 (index 0): panel aligns left. Slides 2-3: panel aligns right.
+      panelEl.classList.toggle('is-align-right', index !== 0);
     };
     var next = function () { goTo((current + 1) % slides.length); };
     var startAuto = function () { timer = setInterval(next, 6000); };
