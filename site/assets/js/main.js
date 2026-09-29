@@ -60,6 +60,42 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // Hero rotating slider (Training / Defense / Infrastructure)
+  var heroSlider = document.getElementById('heroSlider');
+  if (heroSlider) {
+    var slides = heroSlider.querySelectorAll('.hero-slide');
+    var tabs = heroSlider.querySelectorAll('.hero-tab');
+    var kickerEl = heroSlider.querySelector('[data-slide-kicker]');
+    var headingEl = heroSlider.querySelector('[data-slide-heading]');
+    var linkEl = heroSlider.querySelector('[data-slide-link]');
+    var current = 0;
+    var timer;
+
+    var goTo = function (index) {
+      current = index;
+      slides.forEach(function (s, i) { s.classList.toggle('is-active', i === index); });
+      tabs.forEach(function (t, i) { t.classList.toggle('is-active', i === index); });
+      var tab = tabs[index];
+      kickerEl.textContent = tab.getAttribute('data-kicker');
+      headingEl.textContent = tab.getAttribute('data-heading');
+      linkEl.setAttribute('href', tab.getAttribute('data-href'));
+    };
+    var next = function () { goTo((current + 1) % slides.length); };
+    var startAuto = function () { timer = setInterval(next, 6000); };
+    var stopAuto = function () { clearInterval(timer); };
+
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () {
+        goTo(i);
+        stopAuto();
+        startAuto();
+      });
+    });
+    heroSlider.addEventListener('mouseenter', stopAuto);
+    heroSlider.addEventListener('mouseleave', startAuto);
+    startAuto();
+  }
+
   // Counter animation — reads data-to-value, matches live site's real numbers
   var counters = document.querySelectorAll('.stat .num[data-to-value]');
   if (counters.length) {
